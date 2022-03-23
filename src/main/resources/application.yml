@@ -1,0 +1,14 @@
+spring:
+  kafka:
+    bootstrap-servers: 127.0.0.1:29092,127.0.0.1:29093,127.0.0.1:29094
+    producer:
+      client-id: producer-avro
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      retries: 3
+    properties:
+      schema.registry.url: http://127.0.0.1:8081
+topic-config:
+  name: "iot-sensor"
+  default-replicas: 3
+  default-partitions: 3

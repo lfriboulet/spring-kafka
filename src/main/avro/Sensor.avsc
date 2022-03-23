@@ -1,0 +1,71 @@
+{
+  "type": "record",
+  "namespace": "io.lfr.developer.models",
+  "name": "SensorEvent",
+  "version": 1,
+  "fields": [
+    {
+      "name": "serial_number",
+      "type": "string"
+    },
+    {
+      "name": "timestamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    },
+    {
+      "name": "hardware",
+      "type": {
+        "name": "HardwareConfiguration",
+        "type": "record",
+        "fields": [
+          {
+            "name": "cpu",
+            "type": {
+              "type": "double",
+              "scale": 2
+            }
+          },
+          {
+            "name": "memory",
+            "type": "int"
+          },
+          {
+            "name": "disk",
+            "type": "long"
+          }
+        ]
+      }
+
+    },
+    {
+      "name": "consumption",
+      "type": {
+        "name": "ConsumptionInformation",
+        "type": "record",
+        "fields": [
+          {
+            "name": "cpu_usage",
+            "type": {
+              "type": "double",
+              "scale": 2
+            }
+          },
+          {
+            "name": "memory_usage",
+            "type": {
+              "type": "double",
+              "scale": 2
+            }
+          },
+          {
+            "name": "disk_space_used",
+            "type": "long"
+          }
+        ]
+      }
+    }
+  ]
+}
