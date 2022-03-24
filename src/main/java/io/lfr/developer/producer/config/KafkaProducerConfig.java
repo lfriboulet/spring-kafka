@@ -25,7 +25,7 @@ public class KafkaProducerConfig {
     private String clientId;
     @Value("${spring.kafka.producer.retries}")
     private int retries;
-    @Value("${spring.kafka.properties.schema.registry.url}")
+    @Value("${spring.kafka.producer.properties.schema.registry.url}")
     private String schemaregistryUrl;
 
     public Map<String, Object> producerConfig() {
